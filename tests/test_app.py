@@ -10,7 +10,7 @@ def test_root_redirects_to_static():
     expected_location = "/static/index.html"
 
     # Act
-    response = client.get("/", allow_redirects=False)
+    response = client.get("/", follow_redirects=False)
 
     # Assert
     assert response.status_code == 307
